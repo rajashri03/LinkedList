@@ -57,6 +57,8 @@ namespace Linkedlist
                     tempnode = tempnode.next;
                 }
             }
+            Console.WriteLine("\n");
         }
+       
     }
 }
