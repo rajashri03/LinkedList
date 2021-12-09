@@ -80,6 +80,18 @@ namespace Linkedlist
             head = startnode;
 
         }
+
+        public void Pop(link data)
+        {
+            AddNode<link> tempnode = head;
+            if (head != null)
+            {
+                tempnode = head;
+                head = head.next;
+                tempnode = null;
+            }
+
+        }
         //display method
         public void Display()
         {

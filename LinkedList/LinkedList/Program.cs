@@ -4,7 +4,11 @@ using Linkedlist;
 bool Run = true;
 while (Run)
 {
-    Console.Write("Select Number:\n1)Adding Node At End\n2)Add Element At Start of Node\n3)Insert Element between two element\n");
+    Console.Write("Select Number:\n" +
+        "1)Adding Node At End\n" +
+        "2)Add Element At Start of Node\n" +
+        "3)Insert Element between two element\n" +
+        "4)Delete the First Node\n");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
@@ -37,6 +41,18 @@ while (Run)
             Console.ResetColor();
             between.InsertBetween(30, 2);
             between.Display();
+            break;
+        case 4:
+            Linked_List<int> startdelete = new Linked_List<int>();
+            startdelete.Add(56);
+            startdelete.Add(30);
+            startdelete.Add(70);
+            startdelete.Display();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Deleting the First Eelement\n");
+            Console.ResetColor();
+            startdelete.Pop(56);
+            startdelete.Display();
             break;
         default:
             Run = !Run;
