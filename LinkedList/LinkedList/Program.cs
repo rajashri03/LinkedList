@@ -4,7 +4,7 @@ using Linkedlist;
 bool Run = true;
 while (Run)
 {
-    Console.Write("Select Number:\n1)Adding Node At End\n");
+    Console.Write("Select Number:\n1)Adding Node At End\n2)Add Element At Start of Node\n");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
@@ -17,7 +17,16 @@ while (Run)
             //Display()- display the element in list
             nodeList.Display();
             break;
-
+        case 2:
+            Linked_List<int> startlist = new Linked_List<int>();
+            startlist.AddStart(70);
+            startlist.Display();
+            startlist.AddStart(30);
+            startlist.Display();
+            startlist.AddStart(56);
+            //Display()- display the element in list
+            startlist.Display();
+            break;
         default:
             Run = !Run;
             break;

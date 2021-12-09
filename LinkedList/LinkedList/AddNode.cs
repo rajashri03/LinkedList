@@ -40,6 +40,14 @@ namespace Linkedlist
             }
             
         }
+        public void AddStart(link data)
+        {
+            AddNode<link> startnode = new AddNode<link>(data);
+            startnode.data = data;
+            startnode.next = head;
+            head = startnode;
+
+        }
         //display method
         public void Display()
         {
