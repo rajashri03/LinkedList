@@ -38,7 +38,39 @@ namespace Linkedlist
                 }
                 tempnode.next = node;
             }
-            
+
+        }
+        //Inserts a new element at the given position
+        public void InsertBetween(link data, int position)
+        {
+            AddNode<link> newnode = new AddNode<link>(data);
+            newnode.data = data;
+            newnode.next = null;
+            if (position < 1)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Position Should be greater than one");
+                Console.ResetColor();
+            }
+            else if (position == 1)
+            {
+                newnode.next = head;
+                head = newnode;
+            }
+            else
+            {
+                AddNode<link> tempnode = new AddNode<link>(data);
+                tempnode = head;
+                while (position > 2)
+                {
+                    tempnode = tempnode.next;
+                    position--;
+                }
+                newnode.next = tempnode.next;
+                tempnode.next = newnode;
+
+            }
+
         }
         public void AddStart(link data)
         {
@@ -67,6 +99,6 @@ namespace Linkedlist
             }
             Console.WriteLine("\n");
         }
-       
+
     }
 }

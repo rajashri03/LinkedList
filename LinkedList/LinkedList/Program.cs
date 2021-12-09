@@ -4,7 +4,7 @@ using Linkedlist;
 bool Run = true;
 while (Run)
 {
-    Console.Write("Select Number:\n1)Adding Node At End\n2)Add Element At Start of Node\n");
+    Console.Write("Select Number:\n1)Adding Node At End\n2)Add Element At Start of Node\n3)Insert Element between two element\n");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
@@ -26,6 +26,17 @@ while (Run)
             startlist.AddStart(56);
             //Display()- display the element in list
             startlist.Display();
+            break;
+        case 3:
+            Linked_List<int> between = new Linked_List<int>();
+            between.Add(56);
+            between.Add(70);
+            between.Display();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Add 30 between 56 and 70\n");
+            Console.ResetColor();
+            between.InsertBetween(30, 2);
+            between.Display();
             break;
         default:
             Run = !Run;
