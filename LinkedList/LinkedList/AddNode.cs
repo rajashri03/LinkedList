@@ -92,6 +92,20 @@ namespace Linkedlist
             }
 
         }
+
+        public void PopLast(link data)
+        {
+            AddNode<link> tempnode = head;
+            AddNode<link> lastnode = tempnode.next;
+            if (head.next!= null)
+            {
+                //tempnode = head;
+                tempnode = tempnode.next;
+                tempnode.next = null;
+                lastnode = null;
+                //lastnode = head;
+            }
+        }
         //display method
         public void Display()
         {

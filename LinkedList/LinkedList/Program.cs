@@ -8,7 +8,8 @@ while (Run)
         "1)Adding Node At End\n" +
         "2)Add Element At Start of Node\n" +
         "3)Insert Element between two element\n" +
-        "4)Delete the First Node\n");
+        "4)Delete the First Node\n"+
+        "5)Delete the Last Node\n");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
@@ -49,10 +50,22 @@ while (Run)
             startdelete.Add(70);
             startdelete.Display();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Deleting the First Eelement\n");
+            Console.WriteLine("After Deleting the First Eelement\n");
             Console.ResetColor();
             startdelete.Pop(56);
             startdelete.Display();
+            break;
+        case 5:
+            Linked_List<int> lastdelete = new Linked_List<int>();
+            lastdelete.Add(56);
+            lastdelete.Add(30);
+            lastdelete.Add(70);
+            lastdelete.Display();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("After Deleting the Last Eelement\n");
+            Console.ResetColor();
+            lastdelete.PopLast(56);
+            lastdelete.Display();
             break;
         default:
             Run = !Run;
