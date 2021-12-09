@@ -106,6 +106,41 @@ namespace Linkedlist
                 //lastnode = head;
             }
         }
+
+        public void Search(int searchposition)
+        {
+            AddNode<link> tempnode = head;
+            int i = 0;
+            int found = 0;
+            if(head == null)
+            {
+                Console.WriteLine("List is Empty");
+            }
+            else
+            {
+                while(tempnode!=null)
+                {
+                    i++;
+                    if(tempnode.data.Equals(searchposition))
+                    {
+                        found++;
+                        break;
+                    }
+                    tempnode = tempnode.next;                     
+                    
+                }
+                if(found==1)
+                {
+                    Console.WriteLine("Searching Element is " + searchposition);
+                    Console.WriteLine(searchposition + " found at position " + i+"\n");
+                }
+                else
+                {
+                    Console.WriteLine(searchposition + " Not found");
+                }
+            }
+            
+        }
         //display method
         public void Display()
         {

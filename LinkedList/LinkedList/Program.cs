@@ -9,7 +9,8 @@ while (Run)
         "2)Add Element At Start of Node\n" +
         "3)Insert Element between two element\n" +
         "4)Delete the First Node\n"+
-        "5)Delete the Last Node\n");
+        "5)Delete the Last Node\n"+
+        "6)Search Element\n");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
@@ -66,6 +67,14 @@ while (Run)
             Console.ResetColor();
             lastdelete.PopLast(56);
             lastdelete.Display();
+            break;
+        case 6:
+            Linked_List<int> search = new Linked_List<int>();
+            search.Add(56);
+            search.Add(30);
+            search.Add(70);
+            search.Display();
+            search.Search(30);
             break;
         default:
             Run = !Run;
