@@ -2,6 +2,7 @@
 using Linkedlist;
 /*Lets create a simple Linked List of 56, 30 and 70*/
 bool Run = true;
+Linked_List<int> insert = new Linked_List<int>();
 while (Run)
 {
     Console.Write("Select Number:\n" +
@@ -10,71 +11,78 @@ while (Run)
         "3)Insert Element between two element\n" +
         "4)Delete the First Node\n"+
         "5)Delete the Last Node\n"+
-        "6)Search Element\n");
+        "6)Search Element\n" +
+        "7)Insert 40 after 30\n");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
         case 1:
-            Linked_List<int> nodeList = new Linked_List<int>();
+            //Linked_List<int> insert = new Linked_List<int>();
             //Adding element to the list  
-            nodeList.Add(56);
-            nodeList.Add(30);
-            nodeList.Add(70);
+            insert.Add(56);
+            insert.Add(30);
+            insert.Add(70);
             //Display()- display the element in list
-            nodeList.Display();
+            insert.Display();
             break;
         case 2:
-            Linked_List<int> startlist = new Linked_List<int>();
-            startlist.AddStart(70);
-            startlist.Display();
-            startlist.AddStart(30);
-            startlist.Display();
-            startlist.AddStart(56);
+            insert.AddStart(70);
+            insert.Display();
+            insert.AddStart(30);
+            insert.Display();
+            insert.AddStart(56);
             //Display()- display the element in list
-            startlist.Display();
+            insert.Display();
             break;
         case 3:
-            Linked_List<int> between = new Linked_List<int>();
-            between.Add(56);
-            between.Add(70);
-            between.Display();
+            insert.Add(56);
+            insert.Add(70);
+            insert.Display();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Add 30 between 56 and 70\n");
+            Console.WriteLine("Add 30 after 56\n");
             Console.ResetColor();
-            between.InsertBetween(30, 2);
-            between.Display();
+            insert.InsertBetween(30, 2);
+            insert.Display();
             break;
         case 4:
-            Linked_List<int> startdelete = new Linked_List<int>();
-            startdelete.Add(56);
-            startdelete.Add(30);
-            startdelete.Add(70);
-            startdelete.Display();
+            insert.Add(56);
+            insert.Add(30);
+            insert.Add(70);
+            insert.Display();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("After Deleting the First Eelement\n");
             Console.ResetColor();
-            startdelete.Pop(56);
-            startdelete.Display();
+            insert.Pop(56);
+            insert.Display();
             break;
         case 5:
-            Linked_List<int> lastdelete = new Linked_List<int>();
-            lastdelete.Add(56);
-            lastdelete.Add(30);
-            lastdelete.Add(70);
-            lastdelete.Display();
+            insert.Add(56);
+            insert.Add(30);
+            insert.Add(70);
+            insert.Display();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("After Deleting the Last Eelement\n");
             Console.ResetColor();
-            lastdelete.PopLast(56);
-            lastdelete.Display();
+            insert.PopLast(56);
+            insert.Display();
             break;
         case 6:
-            Linked_List<int> search = new Linked_List<int>();
-            search.Add(56);
-            search.Add(30);
-            search.Add(70);
-            search.Display();
-            search.Search(30);
+            insert.Add(56);
+            insert.Add(30);
+            insert.Add(70);
+            insert.Display();
+            insert.Search(30);
+            break;
+        case 7:
+            insert.Add(56);
+            insert.Add(30);
+            insert.Add(70);
+            insert.Display();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Add 40 after 30\n");
+            Console.ResetColor();
+            insert.InsertBetween(40, 3);
+            insert.Display();
             break;
         default:
             Run = !Run;
