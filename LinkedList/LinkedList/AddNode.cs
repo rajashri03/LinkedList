@@ -141,6 +141,27 @@ namespace Linkedlist
             }
             
         }
+        /// <summary>
+        /// Removing the specified node from the LinkedList<T>
+        /// </summary>
+        /// <param name="data">Removing the specified node from the LinkedList<T></param>
+        public void DeleteBetween(link data)
+        {
+            AddNode<link> tempnode = head, previous = null;
+            if (tempnode != null && tempnode.data.Equals(data))
+            {
+                head = tempnode.next;
+                return;
+            }
+            while (tempnode != null && !tempnode.data.Equals(data))
+            {
+                previous = tempnode;
+                tempnode = tempnode.next;
+            }
+            if (tempnode == null)
+                return;
+            previous.next = tempnode.next;
+        }
         //display method
         public void Display()
         {
